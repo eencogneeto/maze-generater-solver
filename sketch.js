@@ -7,7 +7,7 @@ var stack = [];
 var started = false;
 
 function setup() {
-    createCanvas(1000, 600);
+    createCanvas(1010, 610);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 

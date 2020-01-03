@@ -7,7 +7,11 @@ class Cell {
 
     show() {
         noStroke();
-        if (this == current) {
+        if (this.i == 0 && this.j == 0) {
+          fill(0, 255, 0);
+        } else if (this.i == 100 && this.j == 60) {
+          fill(0, 255, 0);
+        } else if (this == current) {
           fill(255, 0, 0);
         } else if (this.wall) {
           fill(0);
