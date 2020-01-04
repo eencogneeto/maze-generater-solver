@@ -4,24 +4,16 @@ var grid;
 var current;
 var stack = [];
 
-var started = false;
+var runMazeGeneration = false;
 
 function setup() {
     createCanvas(1010, 610);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 
-    grid = new Array(cols);
-    for (var i = 0; i < cols; i++) {
-        grid[i] = new Array(rows);
-        for (var j = 0; j < rows; j++) {
-            grid[i][j] = new Cell(i, j);
-        }
-    }
+    newArray();
 
     noLoop();
-
-    current = grid[0][0];
 }
 
 function draw() {
@@ -31,27 +23,42 @@ function draw() {
         }
     }
 
-    current.wall = false;
-    var next = current.randomNeighbor();
-    if (next != undefined) {
-        next.wall = false;
-        stack.push(next);
-        removeWall(current, next);
-        current = next;
-    } else if (stack.length > 0) {
-        current = stack.pop();
+    if (runMazeGeneration) {
+        current.wall = false;
+        var next = current.randomNeighbor();
+        if (next != undefined) {
+            next.wall = false;
+            stack.push(next);
+            removeWall(current, next);
+            current = next;
+        } else if (stack.length > 0) {
+            current = stack.pop();
+        }
     }
 }
 
-function myFunction() {
-    started = true;
+function newArray() {
+    grid = new Array(cols);
+    for (var i = 0; i < cols; i++) {
+        grid[i] = new Array(rows);
+        for (var j = 0; j < rows; j++) {
+            grid[i][j] = new Cell(i, j);
+        }
+    }
+    current = grid[0][0];
+}
+
+function startMazeGeneration() {
+    runMazeGeneration = true;
     loop();  
 }
 
 function clearMaze() {
+    loop();
     clear();
+    newArray();
     noLoop();
-
+    runMazeGeneration = false;
 }
 
 function stopAnimation() {
@@ -60,6 +67,10 @@ function stopAnimation() {
 
 function resumeAnimation() {
     loop();
+}
+
+function redrawButton() {
+    redraw(); // for step by step, must do a noLoop() first
 }
 
 function removeWall(a, b) {
