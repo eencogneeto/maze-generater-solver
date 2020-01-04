@@ -22,3 +22,8 @@ function resumeAnimation() {
 function redrawButton() {
     redraw(); // for step by step, must do a noLoop() first
 }
+
+function startSolveDFS() {
+    runSolveDFS = true;
+    loop();
+}
