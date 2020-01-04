@@ -5,7 +5,6 @@ var current;
 var stack = [];
 var visitedArray;
 
-
 var runMazeGeneration = false;
 var runSolveDFS = false;
 
@@ -48,12 +47,18 @@ function newArray() {
 }
 
 function newVisitedArray() {
-    visitedArray = new Array(cols).fill(
-        new Array(rows).fill(false),
+    visitedArray = Array.from({ length: cols }, () => 
+        Array.from({ length: rows }, () => false)
     );
-    
-    // Testing
-    visitedArray[10][10] = true;
+   
+    // The following code for initializing 2d array will not work
+    // More info https://stackoverflow.com/questions/50002593/initialize-a-two-dimensional-array-in-javascript
+    // visitedArray = new Array(cols).fill(
+    //     new Array(rows).fill(false),
+    // );
+    console.log("New Visited Array");
+    visitedArray[0][2] = true;
+    visitedArray[2][0] = true;
     console.log(visitedArray);
 }
 

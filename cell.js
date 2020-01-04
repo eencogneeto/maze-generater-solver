@@ -15,6 +15,8 @@ class Cell {
           fill(255, 0, 0);
         } else if (this.wall) {
           fill(0);
+        } else if (visitedArray[this.i][this.j]) {
+          fill(0, 0, 255);
         } else {
           fill(255);
         }
