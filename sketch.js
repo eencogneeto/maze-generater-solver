@@ -48,6 +48,20 @@ function myFunction() {
     loop();  
 }
 
+function clearMaze() {
+    clear();
+    noLoop();
+
+}
+
+function stopAnimation() {
+    noLoop();
+}
+
+function resumeAnimation() {
+    loop();
+}
+
 function removeWall(a, b) {
     if (a.i - b.i == 2) grid[a.i - 1][a.j].wall = false;    //Left
     if (a.i - b.i == -2) grid[a.i + 1][a.j].wall = false;   //Right
