@@ -70,31 +70,6 @@ function newVisitedArray() {
     console.log(visitedArray);
 }
 
-function startMazeGeneration() {
-    runMazeGeneration = true;
-    loop();  
-}
-
-function clearMaze() {
-    loop();
-    clear();
-    newArray();
-    noLoop();
-    runMazeGeneration = false;
-}
-
-function stopAnimation() {
-    noLoop();
-}
-
-function resumeAnimation() {
-    loop();
-}
-
-function redrawButton() {
-    redraw(); // for step by step, must do a noLoop() first
-}
-
 function removeWall(a, b) {
     if (a.i - b.i == 2) grid[a.i - 1][a.j].wall = false;    //Left
     if (a.i - b.i == -2) grid[a.i + 1][a.j].wall = false;   //Right
