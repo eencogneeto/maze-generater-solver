@@ -3,15 +3,21 @@ var cols, rows;
 var grid;
 var current;
 var stack = [];
+var visitedArray;
+
 
 var runMazeGeneration = false;
 
 function setup() {
+    // frameRate(60);
+
     createCanvas(1010, 610);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 
     newArray();
+
+    newVisitedArray()
 
     noLoop();
 }
@@ -34,6 +40,11 @@ function draw() {
         } else if (stack.length > 0) {
             current = stack.pop();
         }
+        if (!stack.length) {
+            console.log("End of maze generation")
+            current = grid[0][0];
+            runMazeGeneration = false;
+        }
     }
 }
 
@@ -45,7 +56,18 @@ function newArray() {
             grid[i][j] = new Cell(i, j);
         }
     }
+
     current = grid[0][0];
+}
+
+function newVisitedArray() {
+    visitedArray = new Array(cols).fill(
+        new Array(rows).fill(false),
+    );
+    
+    // Testing
+    visitedArray[10][10] = true;
+    console.log(visitedArray);
 }
 
 function startMazeGeneration() {
