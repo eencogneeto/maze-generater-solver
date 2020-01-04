@@ -8,15 +8,15 @@ class Cell {
     show() {
         noStroke();
         if (this.i == 0 && this.j == 0) {
-          fill(0, 255, 0);
-        } else if (this.i == 100 && this.j == 60) {
-          fill(0, 255, 0);
+          fill(0, 222, 0);
+        } else if (this.i == cols - 1 && this.j == rows - 1) {
+          fill(0, 222, 0);
         } else if (this == current) {
-          fill(255, 0, 0);
+          fill(222, 0, 0);
         } else if (this.wall) {
           fill(0);
         } else if (visitedArray[this.i][this.j]) {
-          fill(0, 0, 255);
+          fill(210, 120, 255);
         } else {
           fill(255);
         }

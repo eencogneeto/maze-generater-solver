@@ -11,7 +11,7 @@ var runSolveDFS = false;
 function setup() {
     // frameRate(60);
 
-    createCanvas(1010, 610);
+    createCanvas(510, 510);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 
@@ -31,6 +31,10 @@ function draw() {
 
     if (runMazeGeneration) {
         generationRandom();
+    }
+
+    if (runSolveDFS) {
+        solveDFS();
     }
 }
 
@@ -57,9 +61,9 @@ function newVisitedArray() {
     //     new Array(rows).fill(false),
     // );
     console.log("New Visited Array");
-    visitedArray[0][2] = true;
-    visitedArray[2][0] = true;
-    console.log(visitedArray);
+    // visitedArray[0][2] = true;
+    // visitedArray[2][0] = true;
+    // console.log(visitedArray);
 }
 
 // function removeWall(a, b) {

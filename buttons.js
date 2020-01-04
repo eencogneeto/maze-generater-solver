@@ -7,8 +7,10 @@ function clearMaze() {
     loop();
     clear();
     newArray();
+    newVisitedArray()
     noLoop();
     runMazeGeneration = false;
+    runSolveDFS = false;
 }
 
 function stopAnimation() {
@@ -24,6 +26,7 @@ function redrawButton() {
 }
 
 function startSolveDFS() {
+    console.log("dfs button press")
     runSolveDFS = true;
     loop();
 }
