@@ -8,12 +8,13 @@ var previousArray;
 
 var runMazeGeneration = false;
 var runSolveDFS = false;
+var runSolveBFS = false;
 var runHighlightPath = false;
 
 function setup() {
     // frameRate(60);
 
-    createCanvas(610, 410);
+    createCanvas(710, 510);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 
@@ -39,6 +40,10 @@ function draw() {
 
     if (runSolveDFS) {
         solveDFS();
+    }
+
+    if (runSolveBFS) {
+        solveBFS();
     }
 
     if (runHighlightPath) {

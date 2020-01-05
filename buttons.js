@@ -10,8 +10,10 @@ function clearMaze() {
     newVisitedArray();
     newPreviousArray();
     noLoop();
+    stack = [];
     runMazeGeneration = false;
     runSolveDFS = false;
+    runSolveBFS = false;
     runHighlightPath = false;
 }
 
@@ -30,5 +32,11 @@ function redrawButton() {
 function startSolveDFS() {
     console.log("dfs button press")
     runSolveDFS = true;
+    loop();
+}
+
+function startSolveBFS() {
+    console.log("bfs button press")
+    runSolveBFS = true;
     loop();
 }
