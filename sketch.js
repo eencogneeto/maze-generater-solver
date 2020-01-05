@@ -56,6 +56,7 @@ function newArray() {
     }
 
     current = grid[0][0];
+    console.log("New Array");
 }
 
 function newVisitedArray() {
@@ -74,7 +75,11 @@ function newVisitedArray() {
 }
 
 function newPreviousArray() {
-    previousArray = Array(cols).fill(null).map(()=>Array(rows).fill(null));
+    // previousArray = Array(cols).fill(null).map(()=>Array(rows).fill(null));
+    previousArray = Array.from({ length: cols }, () => 
+        Array.from({ length: rows }, () => null)
+    );
+
     console.log("New Previous Array");
 }
 

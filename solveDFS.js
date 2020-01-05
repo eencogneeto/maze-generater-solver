@@ -8,6 +8,7 @@ function solveDFS() {
         // highlightPath();
         runSolveDFS = false;
         runHighlightPath = true;
+        stack = [];
         return undefined;
     }
 

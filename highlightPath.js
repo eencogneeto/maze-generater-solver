@@ -6,6 +6,7 @@ function highlightPath() {
 
     if (current.i == 0 && current.j == 0) {
         runHighlightPath = false;
+        console.log("Highlight Path Done")
         noLoop();
         return undefined;
     }
