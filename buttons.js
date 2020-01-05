@@ -7,10 +7,12 @@ function clearMaze() {
     loop();
     clear();
     newArray();
-    newVisitedArray()
+    newVisitedArray();
+    newPreviousArray();
     noLoop();
     runMazeGeneration = false;
     runSolveDFS = false;
+    runHighlightPath = false;
 }
 
 function stopAnimation() {

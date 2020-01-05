@@ -3,6 +3,7 @@ class Cell {
         this.i = i;
         this.j = j;
         this.wall = true;
+        this.path = false;
     }
 
     show() {
@@ -11,12 +12,14 @@ class Cell {
           fill(0, 222, 0);
         } else if (this.i == cols - 1 && this.j == rows - 1) {
           fill(0, 222, 0);
+        } else if (this.path) {
+          fill(255, 204, 0);
         } else if (this == current) {
           fill(222, 0, 0);
         } else if (this.wall) {
           fill(0);
         } else if (visitedArray[this.i][this.j]) {
-          fill(210, 120, 255);
+          fill(190, 190, 190);
         } else {
           fill(255);
         }

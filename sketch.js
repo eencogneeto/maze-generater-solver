@@ -4,20 +4,24 @@ var grid;
 var current;
 var stack = [];
 var visitedArray;
+var previousArray;
 
 var runMazeGeneration = false;
 var runSolveDFS = false;
+var runHighlightPath = false;
 
 function setup() {
     // frameRate(60);
 
-    createCanvas(510, 510);
+    createCanvas(610, 410);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 
     newArray();
 
-    newVisitedArray()
+    newVisitedArray();
+
+    newPreviousArray();
 
     noLoop();
 }
@@ -35,6 +39,10 @@ function draw() {
 
     if (runSolveDFS) {
         solveDFS();
+    }
+
+    if (runHighlightPath) {
+        highlightPath();
     }
 }
 
@@ -62,8 +70,12 @@ function newVisitedArray() {
     // );
     console.log("New Visited Array");
     // visitedArray[0][2] = true;
-    // visitedArray[2][0] = true;
     // console.log(visitedArray);
+}
+
+function newPreviousArray() {
+    previousArray = Array(cols).fill(null).map(()=>Array(rows).fill(null));
+    console.log("New Previous Array");
 }
 
 // function removeWall(a, b) {
