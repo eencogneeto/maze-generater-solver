@@ -7,11 +7,13 @@
 
     <title>Maze Generator</title>
     <script src="p5.min.js"></script>
-    <script src="cell.js"></script>
+	<script src="cell.js"></script>
+    <script src="PriorityQueue.js"></script>
 	<script src="buttons.js"></script>
 	<script src="generationRandom.js"></script>
 	<script src="solveDFS.js"></script>
 	<script src="solveBFS.js"></script>
+	<script src="solveBestFirstSearch.js"></script>
 	<script src="highlightPath.js"></script>
     <script src="sketch.js"></script>
 
@@ -44,6 +46,7 @@
 	<button onclick="redraw()">Step-by-step (Pause first)</button>
 	<button onclick="startSolveDFS()">DFS</button>
 	<button onclick="startSolveBFS()">BFS</button>
+	<button onclick="startSolveBestFirstSearch()">Best First Search</button>
 </body>
 
 

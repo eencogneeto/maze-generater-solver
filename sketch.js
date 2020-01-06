@@ -5,10 +5,12 @@ var current;
 var stack = [];
 var visitedArray;
 var previousArray;
+var priorityQueue = new PriorityQueue();
 
 var runMazeGeneration = false;
 var runSolveDFS = false;
 var runSolveBFS = false;
+var runSolveBestFirstSearch = false;
 var runHighlightPath = false;
 
 function setup() {
@@ -44,6 +46,10 @@ function draw() {
 
     if (runSolveBFS) {
         solveBFS();
+    }
+
+    if (runSolveBestFirstSearch) {
+        solveBestFirstSearch();
     }
 
     if (runHighlightPath) {

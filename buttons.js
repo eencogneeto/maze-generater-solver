@@ -11,9 +11,11 @@ function clearMaze() {
     newPreviousArray();
     noLoop();
     stack = [];
+    priorityQueue = new PriorityQueue();
     runMazeGeneration = false;
     runSolveDFS = false;
     runSolveBFS = false;
+    runSolveBestFirstSearch = false;
     runHighlightPath = false;
 }
 
@@ -38,5 +40,11 @@ function startSolveDFS() {
 function startSolveBFS() {
     console.log("bfs button press")
     runSolveBFS = true;
+    loop();
+}
+
+function startSolveBestFirstSearch() {
+    console.log("best first search button press")
+    runSolveBestFirstSearch = true;
     loop();
 }
