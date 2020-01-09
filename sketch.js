@@ -5,6 +5,8 @@ var current;
 var stack = [];
 var visitedArray;
 var previousArray;
+var fScoreArray;
+var gScoreArray;
 var priorityQueue = new PriorityQueue();
 
 var runMazeGeneration = false;
@@ -12,6 +14,7 @@ var erase = false;
 var runSolveDFS = false;
 var runSolveBFS = false;
 var runSolveBestFirstSearch = false;
+var runSolveAstar = false;
 var runHighlightPath = false;
 var processRunning = false;
 
@@ -27,6 +30,8 @@ function setup() {
     newVisitedArray();
 
     newPreviousArray();
+
+    newCostArray();
 
     // noLoop();
 }
@@ -52,6 +57,10 @@ function draw() {
 
     if (runSolveBestFirstSearch) {
         solveBestFirstSearch();
+    }
+
+    if (runSolveAstar) {
+        solveAstar();
     }
 
     if (runHighlightPath) {
@@ -112,6 +121,18 @@ function newPreviousArray() {
     );
 
     console.log("New Previous Array");
+}
+
+function newCostArray() {
+    fScoreArray = Array.from({ length: cols }, () => 
+        Array.from({ length: rows }, () => Infinity)
+    );
+
+    gScoreArray = Array.from({ length: cols }, () => 
+        Array.from({ length: rows }, () => Infinity)
+    );
+
+    console.log("New Cost Array");
 }
 
 // function removeWall(a, b) {

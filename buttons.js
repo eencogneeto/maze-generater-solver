@@ -83,11 +83,23 @@ function startSolveBestFirstSearch() {
     }
 }
 
+function startSolveAstar() {
+    console.log("a star search button press")
+    if (!processRunning) {
+        resetSolve();
+        clearHighlightPath();
+        runSolveAstar = true;
+        processRunning = true;
+        loop();
+    }
+}
+
 function haltPathfinding() {
-    if (runSolveDFS || runSolveBFS || runSolveBestFirstSearch || runHighlightPath) {
+    if (runSolveDFS || runSolveBFS || runSolveBestFirstSearch || runSolveAstar || runHighlightPath) {
         runSolveDFS = false;
         runSolveBFS = false;
         runSolveBestFirstSearch = false;
+        runSolveAstar = false;
         runHighlightPath = false;
         processRunning = false;
         current = grid[0][0];
@@ -97,6 +109,7 @@ function haltPathfinding() {
 function resetSolve() {
     newVisitedArray();
     newPreviousArray();
+    newCostArray();
     stack = [];
     priorityQueue = new PriorityQueue();
     runSolveDFS = false;
