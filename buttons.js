@@ -83,6 +83,17 @@ function startSolveBestFirstSearch() {
     }
 }
 
+function haltPathfinding() {
+    if (runSolveDFS || runSolveBFS || runSolveBestFirstSearch || runHighlightPath) {
+        runSolveDFS = false;
+        runSolveBFS = false;
+        runSolveBestFirstSearch = false;
+        runHighlightPath = false;
+        processRunning = false;
+        current = grid[0][0];
+    }
+}
+
 function resetSolve() {
     newVisitedArray();
     newPreviousArray();
