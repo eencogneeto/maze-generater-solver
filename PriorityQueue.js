@@ -87,4 +87,29 @@ class PriorityQueue {
         // return true if the queue is empty. 
         return this.items.length == 0; 
     }
+
+    containsElement(celement) {
+        // var temp = this.items;
+        // return temp.filter(e => (e.element == celement));
+
+        for(var i = 0; i < this.items.length; i++) {
+            if (this.items[i].element == celement) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    updatePriority(celement, heuristic) {
+        // var temp = this.items;
+        // return temp.filter(e => (e.element == celement));
+
+        for(var i = 0; i < this.items.length; i++) {
+            if (this.items[i].element == celement && this.items[i].priority > heuristic) {
+                this.items[i].priority = heuristic;
+                return true;
+            }
+        }
+        return false;
+    }
 } 

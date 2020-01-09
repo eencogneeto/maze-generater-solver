@@ -8,6 +8,7 @@ var previousArray;
 var priorityQueue = new PriorityQueue();
 
 var runMazeGeneration = false;
+var erase = false;
 var runSolveDFS = false;
 var runSolveBFS = false;
 var runSolveBestFirstSearch = false;
@@ -26,7 +27,7 @@ function setup() {
 
     newPreviousArray();
 
-    noLoop();
+    // noLoop();
 }
 
 function draw() {
@@ -56,6 +57,24 @@ function draw() {
         highlightPath();
     }
 }
+
+function mouseClicked() {
+    let x = mouseX;
+    let y = mouseY;
+
+    grid[Math.floor(x/w)][Math.floor(y/w)].wall = !grid[Math.floor(x/w)][Math.floor(y/w)].wall;
+}
+
+function mouseDragged(event) {
+    console.log(event);
+
+    let x = mouseX;
+    let y = mouseY;
+
+    // grid[Math.floor(x/w)][Math.floor(y/w)].wall = !grid[Math.floor(x/w)][Math.floor(y/w)].wall;
+    grid[Math.floor(x/w)][Math.floor(y/w)].wall = erase;
+}
+  
 
 function newArray() {
     grid = new Array(cols);

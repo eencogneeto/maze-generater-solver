@@ -10,7 +10,13 @@ function generationRandom() {
         current = stack.pop();
     }
     if (!stack.length) {
-        console.log("End of maze generation")
+        console.log("End of maze generation");
+        
+        // for (aaa=0; aaa<100; aaa++) {
+        //     current = grid[Math.floor(random(cols))][Math.floor(random(rows))];
+        //     current.wall = false;
+        // }
+
         current = grid[0][0];
         runMazeGeneration = false;
     }
