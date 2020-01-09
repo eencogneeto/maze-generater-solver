@@ -33,6 +33,7 @@ function solveBFS() {
         console.log("End of solve BFS")
         current = grid[0][0];
         runSolveBFS = false;
+        processRunning = false;
     } else {
         current = stack.shift();
     }

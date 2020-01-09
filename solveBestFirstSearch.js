@@ -67,6 +67,7 @@ function solveBestFirstSearch() {
         console.log("End of solve Best First Search")
         current = grid[0][0];
         runSolveBestFirstSearch = false;
+        processRunning = false;
     } else {
         var _current = priorityQueue.dequeue();
         current = _current.element;
@@ -74,5 +75,5 @@ function solveBestFirstSearch() {
 }
 
 function heuristicManhattan(col, row) {
-    return Math.pow(cols - col, 2) + Math.pow(rows - row, 2);
+    return cols - col + rows - row;
 }

@@ -1,6 +1,9 @@
 function startMazeGeneration() {
-    runMazeGeneration = true;
-    loop();  
+    if (!processRunning) {
+        runMazeGeneration = true;
+        processRunning = true;
+        loop();
+    }
 }
 
 function addHoles() {
@@ -16,7 +19,7 @@ function clearMaze() {
     clear();
     newArray();
     runMazeGeneration = false;
-    
+    processRunning = false;
     // noLoop();
     
     resetSolve();
@@ -49,30 +52,33 @@ function setDrawErase() {
 
 function startSolveDFS() {
     console.log("dfs button press");
-    if (!runMazeGeneration) {
+    if (!processRunning) {
         resetSolve();
         clearHighlightPath();
         runSolveDFS = true;
+        processRunning = true;
         loop();
     }
 }
 
 function startSolveBFS() {
     console.log("bfs button press")
-    if (!runMazeGeneration) {
+    if (!processRunning) {
         resetSolve();
         clearHighlightPath();
         runSolveBFS = true;
+        processRunning = true;
         loop();
     }
 }
 
 function startSolveBestFirstSearch() {
     console.log("best first search button press")
-    if (!runMazeGeneration) {
+    if (!processRunning) {
         resetSolve();
         clearHighlightPath();
         runSolveBestFirstSearch = true;
+        processRunning = true;
         loop();
     }
 }

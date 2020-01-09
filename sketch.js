@@ -13,11 +13,12 @@ var runSolveDFS = false;
 var runSolveBFS = false;
 var runSolveBestFirstSearch = false;
 var runHighlightPath = false;
+var processRunning = false;
 
 function setup() {
     // frameRate(60);
 
-    createCanvas(710, 510);
+    createCanvas(770, 550);
     cols = Math.floor(width / w);
     rows = Math.floor(height / w);
 

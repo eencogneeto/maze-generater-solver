@@ -33,6 +33,7 @@ function solveDFS() {
         console.log("End of solve DFS")
         current = grid[0][0];
         runSolveDFS = false;
+        processRunning = false;
     } else {
         current = stack.pop();
     }

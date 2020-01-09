@@ -6,12 +6,13 @@ function highlightPath() {
 
     if (current.i == 0 && current.j == 0) {
         runHighlightPath = false;
-        console.log("Highlight Path Done")
+        processRunning = false;
+        console.log("Highlight Path Done");
         noLoop();
         return undefined;
     }
 
-    console.log("Highlight Path Pass")
+    console.log("Highlight Path Pass");
     current.path = true;
     current = grid[previousArray[current.i][current.j][0]][previousArray[current.i][current.j][1]];
 

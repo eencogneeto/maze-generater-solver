@@ -19,6 +19,7 @@ function generationRandom() {
 
         current = grid[0][0];
         runMazeGeneration = false;
+        processRunning = false;
     }
 }
 
