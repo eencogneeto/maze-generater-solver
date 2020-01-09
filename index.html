@@ -31,7 +31,7 @@
 		}
 
         button {
-            margin: 20px;
+            margin: 10px;
         }
     </style>
     
@@ -39,14 +39,18 @@
 </head>
 
 <body> 
-	<button onclick="startMazeGeneration()">Generate Maze</button>
-	<button onclick="clearMaze()">Clear Maze</button>
-	<button onclick="stopAnimation()">Pause Animation</button>
-	<button onclick="resumeAnimation()">Resume Animation</button>
-	<button onclick="redraw()">Step-by-step (Pause first)</button>
-	<button onclick="startSolveDFS()">DFS</button>
-	<button onclick="startSolveBFS()">BFS</button>
-	<button onclick="startSolveBestFirstSearch()">Best First Search</button>
+	<div>
+		<button onclick="startMazeGeneration()">Generate Maze</button>
+		<button onclick="clearMaze()">Clear Maze</button>
+		<button onclick="stopAnimation()">Pause Animation</button>
+		<button onclick="resumeAnimation()">Resume Animation</button>
+		<button onclick="redraw()">Step-by-step (Pause first)</button>
+	</div>
+	<div>
+		<button onclick="startSolveDFS()">DFS</button>
+		<button onclick="startSolveBFS()">BFS</button>
+		<button onclick="startSolveBestFirstSearch()">Best First Search</button>
+	</div>
 </body>
 
 
