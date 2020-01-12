@@ -72,6 +72,17 @@ function startSolveBFS() {
     }
 }
 
+function startSolveDijkstra() {
+    console.log("dijkstra button press")
+    if (!processRunning) {
+        resetSolve();
+        clearHighlightPath();
+        runSolveDijkstra = true;
+        processRunning = true;
+        loop();
+    }
+}
+
 function startSolveBestFirstSearch() {
     console.log("best first search button press")
     if (!processRunning) {
@@ -95,9 +106,16 @@ function startSolveAstar() {
 }
 
 function haltPathfinding() {
-    if (runSolveDFS || runSolveBFS || runSolveBestFirstSearch || runSolveAstar || runHighlightPath) {
+    if (runSolveDFS || 
+        runSolveBFS || 
+        runSolveDijkstra || 
+        runSolveBestFirstSearch || 
+        runSolveAstar || 
+        runHighlightPath) {
+        
         runSolveDFS = false;
         runSolveBFS = false;
+        runSolveDijkstra = false;
         runSolveBestFirstSearch = false;
         runSolveAstar = false;
         runHighlightPath = false;
@@ -114,6 +132,7 @@ function resetSolve() {
     priorityQueue = new PriorityQueue();
     runSolveDFS = false;
     runSolveBFS = false;
+    runSolveDijkstra = false;
     runSolveBestFirstSearch = false;
     runHighlightPath = false;
 }

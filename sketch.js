@@ -13,6 +13,7 @@ var runMazeGeneration = false;
 var erase = false;
 var runSolveDFS = false;
 var runSolveBFS = false;
+var runSolveDijkstra = false;
 var runSolveBestFirstSearch = false;
 var runSolveAstar = false;
 var runHighlightPath = false;
@@ -53,6 +54,10 @@ function draw() {
 
     if (runSolveBFS) {
         solveBFS();
+    }
+
+    if (runSolveDijkstra) {
+        solveDijkstra();
     }
 
     if (runSolveBestFirstSearch) {
